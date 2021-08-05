@@ -1,2 +1,2 @@
-<img src = "Screenshots/emConstrucao" width="400" height="700">
+<img src = "Screenshots/emConstrucao.jpg" width="600" height="400">
 
