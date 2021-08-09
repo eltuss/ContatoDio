@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/purple_500"
+        app:title="@string/app_name"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <ImageView
+        android:id="@+id/im_foto"
+        android:layout_width="67dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:src="@tools:sample/avatars"/>
+
+    <TextView
+        android:id="@+id/tx_nome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/im_foto"
+        app:layout_constraintStart_toStartOf="@id/im_foto"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Nome do contato"/>
+
+    <TextView
+        android:id="@+id/tx_telefone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tx_nome"
+        app:layout_constraintStart_toStartOf="@id/im_foto"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="(99)8888888888"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

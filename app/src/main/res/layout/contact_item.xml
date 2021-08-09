@@ -36,6 +36,7 @@
 
         <TextView
             android:id="@+id/telefone"
+            style="@style/TextViewDefault"
             app:layout_constraintTop_toBottomOf="@id/nome"
             app:layout_constraintStart_toEndOf="@id/foto"
             android:layout_marginStart="16dp"

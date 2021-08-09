@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">contatos</string>
+    <string name="menu_01">menu01</string>
+    <string name="menu_02">menu02</string>
+
+    <string name="open_drawer">Abrir</string>
+    <string name="closer_drawer">Fechar</string>
+
+
 </resources>

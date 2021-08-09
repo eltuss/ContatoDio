@@ -8,13 +8,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contato.Contact
 
-class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ContactAdapterViewHolder>(){
+class ContactAdapter(var listener: ClickItemContactListener) :
+    RecyclerView.Adapter<ContactAdapter.ContactAdapterViewHolder>(){
 
     private  val  list: MutableList<Contact> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactAdapterViewHolder {
        val view = LayoutInflater.from(parent.context).inflate(R.layout.contact_item, parent,false)
-        return ContactAdapterViewHolder(view)
+        return ContactAdapterViewHolder(view, list, listener)
     }
 
     override fun getItemCount(): Int {
@@ -32,10 +33,17 @@ class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ContactAdapterViewHol
         notifyDataSetChanged() // esse metodo avisa que a lista foi alterada e que precisa montar ela novamente
     }
 
-    class ContactAdapterViewHolder(itenView: View) : RecyclerView.ViewHolder(itenView){
+    class ContactAdapterViewHolder(itenView: View, var list: List<Contact>, var listener: ClickItemContactListener) :
+        RecyclerView.ViewHolder(itenView){
         private val  nome: TextView = itemView.findViewById(R.id.nome)
         private val  telefone: TextView = itemView.findViewById(R.id.telefone)
         private val  foto: ImageView = itemView.findViewById(R.id.foto)
+
+        init {
+            itemView.setOnClickListener{
+                listener.clickItemContact(list[adapterPosition])
+            }
+        }
 
         fun bind(contact: Contact){
             nome.text = contact.name
